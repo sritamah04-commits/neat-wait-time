@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Queue Manager Design System - Modern, Clean, Professional 
+All colors MUST be HSL. Calming blue/pink theme with rounded cards and soft shadows.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background & Base Colors */
+    --background: 220 25% 98%;
+    --foreground: 215 25% 15%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
+    --card-shadow: 215 25% 65%;
 
+    /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Calming Blue */
+    --primary: 213 94% 60%;
+    --primary-hover: 213 94% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 213 94% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft Pink Accent */
+    --secondary: 330 60% 88%;
+    --secondary-hover: 330 60% 83%;
+    --secondary-foreground: 215 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-light: 142 76% 95%;
+    --warning: 38 92% 50%;
+    --warning-light: 38 92% 95%;
+    --error: 0 84% 60%;
+    --error-light: 0 84% 95%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted & Accent */
+    --muted: 215 20% 94%;
+    --muted-hover: 215 20% 88%;
+    --muted-foreground: 215 16% 46%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 213 94% 96%;
+    --accent-hover: 213 94% 92%;
+    --accent-foreground: 215 25% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    /* Borders & Inputs */
+    --border: 215 20% 88%;
+    --input: 215 20% 88%;
+    --ring: 213 94% 60%;
+
+    /* Design System Values */
+    --radius: 0.75rem;
+    --shadow-soft: 0 4px 20px -4px hsl(var(--card-shadow) / 0.15);
+    --shadow-medium: 0 8px 30px -8px hsl(var(--card-shadow) / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +82,54 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 215 28% 8%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 215 28% 12%;
     --card-foreground: 210 40% 98%;
+    --card-shadow: 215 25% 5%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 215 28% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 213 94% 65%;
+    --primary-hover: 213 94% 60%;
+    --primary-foreground: 215 28% 8%;
+    --primary-light: 213 94% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 330 60% 25%;
+    --secondary-hover: 330 60% 30%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --success: 142 76% 45%;
+    --success-light: 142 76% 15%;
+    --warning: 38 92% 55%;
+    --warning-light: 38 92% 15%;
+    --error: 0 84% 65%;
+    --error-light: 0 84% 15%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --muted: 215 28% 18%;
+    --muted-hover: 215 28% 22%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 215 28% 18%;
+    --accent-hover: 215 28% 22%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 215 28% 18%;
+    --input: 215 28% 18%;
+    --ring: 213 94% 65%;
+    --sidebar-background: 215 28% 12%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 213 94% 65%;
+    --sidebar-primary-foreground: 215 28% 8%;
+    --sidebar-accent: 215 28% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 28% 18%;
+    --sidebar-ring: 213 94% 65%;
   }
 }
 
